@@ -36,7 +36,7 @@ quant-trading-bot/
 | 편 | 주제 | 코드 | 블로그 |
 |---|---|---|---|
 | #1 | 이동평균 교차 전략 백테스트 | [`01-ma-crossover/`](01-ma-crossover/) | https://cho-jeongbin55.tistory.com/1 |
-| #2 | 파라미터 과최적화(오버피팅)의 함정 | [`02-overfitting/`](02-overfitting/) | (발행 후 링크) |
+| #2 | 파라미터 과최적화(오버피팅)의 함정 | [`02-overfitting/`](02-overfitting/) | https://cho-jeongbin55.tistory.com/2 |
 
 ## 빠른 실행
 
