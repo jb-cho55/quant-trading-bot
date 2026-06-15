@@ -12,40 +12,42 @@
 
 전체 설명은 블로그에서 볼 수 있습니다 → **https://cho-jeongbin55.tistory.com**
 
-| 편 | 주제 | 글 |
-|---|---|---|
-| #1 | 이동평균 교차 전략 백테스트 | https://cho-jeongbin55.tistory.com/1 |
-| #2 | 파라미터 과최적화(오버피팅)의 함정 | (발행 후 링크) |
+## 폴더 구조
 
-## 코드
+각 편(post)이 독립 폴더로 나뉘어 있습니다. 폴더 안에 코드·차트·설명(README)이 함께 있습니다.
 
-| 파일 | 설명 |
-|---|---|
-| `btc_ma_backtest.py` | 이동평균 교차(골든/데드크로스) 전략 백테스트. 단순 보유와 수익률·MDD 비교. 미래참조(look-ahead) 방지를 위해 신호를 하루 미뤄 진입. |
-| `param_optimization.py` | 과최적화 시연. 데이터를 전반부(최적화)·후반부(검증)로 나눠, 전반부 최고 조합이 후반부에서 무너지는 것을 보여줌. |
+```
+quant-trading-bot/
+├── 01-ma-crossover/      #1 이동평균 교차 전략 백테스트
+│   ├── btc_ma_backtest.py
+│   ├── backtest_result.png
+│   └── README.md
+├── 02-overfitting/       #2 파라미터 과최적화의 함정
+│   ├── param_optimization.py
+│   ├── overfitting_heatmap.png
+│   └── README.md
+├── requirements.txt      공통 의존성
+├── LICENSE
+└── README.md             (이 파일)
+```
 
-### 결과 미리보기
+## 시리즈 목차
 
-**#1 — 이동평균 교차 전략 (BTC 3년)**
+| 편 | 주제 | 코드 | 블로그 |
+|---|---|---|---|
+| #1 | 이동평균 교차 전략 백테스트 | [`01-ma-crossover/`](01-ma-crossover/) | https://cho-jeongbin55.tistory.com/1 |
+| #2 | 파라미터 과최적화(오버피팅)의 함정 | [`02-overfitting/`](02-overfitting/) | (발행 후 링크) |
 
-![백테스트 결과](backtest_result.png)
-
-단순 보유 +138.9% vs MA 전략 +88.3%. 전략은 상승장에서 시장을 못 이겼지만,
-최대낙폭은 −38.6%로 보유(−51.2%)보다 작았습니다 (하락 방어).
-
-**#2 — 과최적화 히트맵**
-
-![과최적화 히트맵](overfitting_heatmap.png)
-
-전반부에서 +74%로 빛나던 'MA 5/200' 조합이, 후반부(실전)에서는 −2.8%.
-같은 기간 단순 보유는 +51.9%. 화려한 백테스트일수록 의심해야 하는 이유입니다.
-
-## 실행 방법
+## 빠른 실행
 
 ```bash
-pip install yfinance pandas matplotlib
-python btc_ma_backtest.py
-python param_optimization.py
+pip install -r requirements.txt
+
+# 1편 — 이동평균 교차 백테스트
+cd 01-ma-crossover && python btc_ma_backtest.py
+
+# 2편 — 과최적화 시연
+cd 02-overfitting && python param_optimization.py
 ```
 
 Python 3.10+ 권장. 데이터는 [yfinance](https://github.com/ranaroussi/yfinance)로
