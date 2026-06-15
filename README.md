@@ -26,6 +26,10 @@ quant-trading-bot/
 │   ├── param_optimization.py
 │   ├── overfitting_heatmap.png
 │   └── README.md
+├── 03-walkforward/       #3 워크포워드 분석
+│   ├── walkforward_backtest.py
+│   ├── walkforward_result.png
+│   └── README.md
 ├── requirements.txt      공통 의존성
 ├── LICENSE
 └── README.md             (이 파일)
@@ -37,6 +41,7 @@ quant-trading-bot/
 |---|---|---|---|
 | #1 | 이동평균 교차 전략 백테스트 | [`01-ma-crossover/`](01-ma-crossover/) | https://cho-jeongbin55.tistory.com/1 |
 | #2 | 파라미터 과최적화(오버피팅)의 함정 | [`02-overfitting/`](02-overfitting/) | https://cho-jeongbin55.tistory.com/2 |
+| #3 | 워크포워드 분석: 가장 정직한 백테스트 | [`03-walkforward/`](03-walkforward/) | https://cho-jeongbin55.tistory.com/3 |
 
 ## 빠른 실행
 
@@ -48,6 +53,9 @@ cd 01-ma-crossover && python btc_ma_backtest.py
 
 # 2편 — 과최적화 시연
 cd 02-overfitting && python param_optimization.py
+
+# 3편 — 워크포워드 분석
+cd 03-walkforward && python walkforward_backtest.py
 ```
 
 Python 3.10+ 권장. 데이터는 [yfinance](https://github.com/ranaroussi/yfinance)로
