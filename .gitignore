@@ -1,0 +1,17 @@
+# 블로그 초안/변환물 (발행본과 중복 — 저장소엔 코드만)
+blog-post-*-draft.md
+*.html
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
